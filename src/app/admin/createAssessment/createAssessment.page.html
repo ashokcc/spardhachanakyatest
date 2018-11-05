@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+        &#3242;&#3277;&#3248;&#3254;&#3277;&#3240;&#3270;&#3223;&#3251;&#3265;: {{questionsCount}}
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button icon-only (click)="addQuestion()">
+        <ion-icon name="add-circle"></ion-icon>
+      </ion-button>
+      <ion-button (click)="saveAssessment()" icon-only [disabled]="questionsCount <= 0">
+        <ion-icon name="checkmark-circle-outline"></ion-icon>
+      </ion-button>      
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding class="ion-content-container">
+  <form [formGroup]="questionsForm">
+    <ion-item>
+      <ion-label no-margin position="floating">&#3253;&#3263;&#3255;&#3247;</ion-label>
+      <ion-input readonly  type="text" class="input-color" formControlName="topic" (click)="onFocus(questionsForm.get('topic'))"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label no-margin position="floating">&#3205;&#3253;&#3239;&#3263;</ion-label>
+      <ion-input readonly type="number"  class="input-color" formControlName="duration" (click)="onFocus(questionsForm.get('duration'))"></ion-input>
+    </ion-item>
+    <ion-card no-margin>
+      <ion-card-content no-padding>
+        <div formArrayName="questions" *ngFor="let question of questionsForm.get('questions')['controls'];let i=index;">
+            <div [formGroupName]="i">
+              <ion-item>
+                <ion-label no-margin position="floating"> 
+                  &#3242;&#3277;&#3248;&#3254;&#3277;&#3240;&#3270; {{i+1}} 
+                </ion-label>
+                <ion-input type="text" readonly class="input-color" formControlName="question" (click)="onFocus(question.get('question'))"></ion-input>
+              </ion-item>
+              <div formArrayName="options" *ngFor="let opt of question.get('options')['controls'];let j=index">
+                <div [formGroupName]="j">
+                    <ion-item>
+                      <ion-label no-margin position="floating">&#3206;&#3247;&#3277;&#3221;&#3270; {{j+1}}</ion-label>
+                      <ion-input type="text" readonly class="input-color" formControlName="option" (click)="onFocus(opt.get('option'))"></ion-input>
+                    </ion-item>  
+                </div>            
+              </div>
+              <ion-item>
+                <ion-label no-margin>&#3209;&#3236;&#3277;&#3236;&#3248;&#3253;&#3240;&#3277;&#3240;&#3265; &#3206;&#3247;&#3277;&#3221;&#3270;&#3246;&#3262;&#3233;&#3263;</ion-label>
+                <ion-select slot="end" formControlName="answer" placeholder="Select Answer" ok-text="Okay" cancel-text="Dismiss">
+                    <ion-select-option [value]="1">&#3206;&#3247;&#3277;&#3221;&#3270; 1</ion-select-option>
+                    <ion-select-option [value]="2">&#3206;&#3247;&#3277;&#3221;&#3270; 2</ion-select-option>
+                    <ion-select-option [value]="3">&#3206;&#3247;&#3277;&#3221;&#3270; 3</ion-select-option>
+                    <ion-select-option [value]="4">&#3206;&#3247;&#3277;&#3221;&#3270; 4</ion-select-option>
+                  </ion-select>
+              </ion-item>
+              <ion-button expand="full" fill="clear" slot="end" icon-only (click)="removeQuestion(question, i)">
+                <ion-icon name="md-remove-circle"></ion-icon>
+              </ion-button>
+            </div>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </form>
+  <!-- <pre>{{questionsForm.value | json}}</pre> -->
+  <keypad-component *ngIf="showKeyBoard" 
+      class="keypad-container"  
+	  [showKeyBoard] = "showKeyBoard"  
+      [currFocusEl] = "currFocusEl"  
+      (evtSource)="changeInput($event)">
+  </keypad-component>
+</ion-content>

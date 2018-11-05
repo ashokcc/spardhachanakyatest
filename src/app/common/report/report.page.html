@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons>
+      <ion-button icon-only (click)="viewReports()">
+          <ion-icon name="arrow-back"></ion-icon>
+          <span class="toolbar-icon-txt" *ngIf="testResults">
+              {{testResults.topic}}
+          </span>        
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button icon-only logout>
+          <ion-icon name="person"></ion-icon>
+      </ion-button>
+    </ion-buttons>    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding class="ion-content-container" *ngIf="testResults">
+    <ion-list>
+      <ion-item class="cca-height">
+        <ion-label no-margin>&#3256;&#3248;&#3263;&#3247;&#3262;&#3238; &#3209;&#3236;&#3277;&#3236;&#3248;&#3223;&#3251;&#3265;: {{testResults.correctAnswers}}</ion-label>
+      </ion-item>
+      <ion-item class="cca-height">
+        <ion-label no-margin>&#3236;&#3242;&#3277;&#3242;&#3262;&#3238; &#3209;&#3236;&#3277;&#3236;&#3248;&#3223;&#3251;&#3265;: {{testResults.wrongAnswers}}</ion-label>
+      </ion-item>
+    </ion-list>
+    <span>
+      <ion-item-group *ngFor="let result of testResults.results; let i = index;">
+        <ion-item-divider>
+          <ion-text color="dark">
+            <h5 style="font-weight: bold;">{{i+1}}. {{result.question}}</h5>
+          </ion-text>
+        </ion-item-divider>
+        <ion-item  *ngFor="let option of result.options; let j = index;">
+          <ion-text *ngIf="result.correctAnswer === option.option" color="primary">{{option.option}}</ion-text>
+          <ion-text *ngIf="result.selectedOption === option.option && result.correctAnswer !== option.option" color="danger">{{option.option}}</ion-text>
+          <ion-text *ngIf="result.selectedOption !== option.option && result.correctAnswer !== option.option">{{option.option}}</ion-text>
+        </ion-item>
+      </ion-item-group>
+    </span>
+</ion-content>

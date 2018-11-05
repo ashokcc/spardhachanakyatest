@@ -1,0 +1,139 @@
+<div class="keys-container" *ngIf="showKeyBoard">
+    <ion-toolbar>
+		<ion-input type="text" class="input-color" [(ngModel)]="inputVal" placeholder="&#3244;&#3248;&#3270;&#3247;&#3263;&#3248;&#3263;"></ion-input>	
+		<ion-button icon-only (click)="submitText()" slot="end">
+			<ion-icon name="checkmark-circle"></ion-icon>
+		</ion-button>	
+	</ion-toolbar>
+    <span class="characters" *ngIf="isCharacters">
+
+        <!-- Vowels -->
+        <button class="key k-a" data-html-code="&#3205;"  (click)="showKeyPad($event)">&#3205;</button>
+        <button class="key k-aa" data-html-code="&#3206;"  (click)="showKeyPad($event)">&#3206;</button>
+        <button class="key k-i" data-html-code="&#3207;"  (click)="showKeyPad($event)">&#3207;</button>
+        <button class="key k-ee" data-html-code="&#3208;"  (click)="showKeyPad($event)">&#3208;</button>
+        <button class="key k-u" data-html-code="&#3209;"  (click)="showKeyPad($event)">&#3209;</button>
+        <button class="key k-oooU" data-html-code="&#3210;"  (click)="showKeyPad($event)">&#3210;</button>
+        <button class="key k-TR" data-html-code="&#3211;"  (click)="showKeyPad($event)">&#3211;</button>
+        <button class="key k-e" data-html-code="&#3214;"  (click)="showKeyPad($event)">&#3214;</button>
+        <button class="key k-ae" data-html-code="&#3215;"  (click)="showKeyPad($event)">&#3215;</button>
+        <button class="key k-ai" data-html-code="&#3216;"  (click)="showKeyPad($event)">&#3216;</button>
+        <button class="key k-o" data-html-code="&#3218;"  (click)="showKeyPad($event)">&#3218;</button>
+        <button class="key k-oa" data-html-code="&#3219;"  (click)="showKeyPad($event)">&#3219;</button>
+        <button class="key k-au" data-html-code="&#3220;"  (click)="showKeyPad($event)">&#3220;</button>
+        <button class="key k-tR" data-html-code="&#3296;"  (click)="showKeyPad($event)">&#3296;</button>
+
+        <!-- consonents 1 -->
+        <button class="key k-ka" data-html-code="&#3221;"  (click)="showKeyPad($event)">&#3221;</button>
+        <button class="key k-kha" data-html-code="&#3222;"  (click)="showKeyPad($event)">&#3222;</button>
+        <button class="key k-ga" data-html-code="&#3223;"  (click)="showKeyPad($event)">&#3223;</button>
+        <button class="key k-gha" data-html-code="&#3224;"  (click)="showKeyPad($event)">&#3224;</button>
+        <button class="key k-ng" data-html-code="&#3225;"  (click)="showKeyPad($event)">&#3225;</button>
+        <!-- consonents  -->
+        <button class="key k-ca" data-html-code="&#3226;"  (click)="showKeyPad($event)">&#3226;</button>
+        <button class="key k-cha" data-html-code="&#3227;"  (click)="showKeyPad($event)">&#3227;</button>
+        <button class="key k-ja" data-html-code="&#3228;"  (click)="showKeyPad($event)">&#3228;</button>
+        <button class="key k-jha" data-html-code="&#3229;"  (click)="showKeyPad($event)">&#3229;</button>
+        <button class="key k-ny" data-html-code="&#3230;"  (click)="showKeyPad($event)">&#3230;</button>
+        <!-- consonents 3 -->
+        <button class="key k-t" data-html-code="&#3231;"  (click)="showKeyPad($event)">&#3231;</button>
+        <button class="key k-tha" data-html-code="&#3232;"  (click)="showKeyPad($event)">&#3232;</button>
+        <button class="key k-da" data-html-code="&#3233;"  (click)="showKeyPad($event)">&#3233;</button>
+        <button class="key k-dha" data-html-code="&#3235;"  (click)="showKeyPad($event)">&#3235;</button>
+        <button class="key k-na" data-html-code="&#3236;"  (click)="showKeyPad($event)">&#3236;</button>
+        <!-- consonents 4 -->
+        <button class="key k-tha" data-html-code="&#3237;"  (click)="showKeyPad($event)">&#3237;</button>
+        <button class="key k-thha" data-html-code="&#3238;"  (click)="showKeyPad($event)">&#3238;</button>
+        <button class="key k-dha" data-html-code="&#3239;"  (click)="showKeyPad($event)">&#3239;</button>
+        <button class="key k-dhha" data-html-code="&#3240;"  (click)="showKeyPad($event)">&#3240;</button>
+        <button class="key k-nna" data-html-code="&#3242;"  (click)="showKeyPad($event)">&#3242;</button>
+        <!-- consonents 5 -->
+        <button class="key k-pa" data-html-code="&#3243;"  (click)="showKeyPad($event)">&#3243;</button>
+        <button class="key k-pha" data-html-code="&#3244;"  (click)="showKeyPad($event)">&#3244;</button>
+        <button class="key k-ba" data-html-code="&#3245;"  (click)="showKeyPad($event)">&#3245;</button>
+        <button class="key k-bha" data-html-code="&#3246;"  (click)="showKeyPad($event)">&#3246;</button>
+        <button class="key k-ma" data-html-code="&#3247;"  (click)="showKeyPad($event)">&#3247;</button>
+        <!-- consonents 6 -->
+        <button class="key k-ya" data-html-code="&#3248;"  (click)="showKeyPad($event)">&#3248;</button>
+        <button class="key k-ra" data-html-code="&#3250;"  (click)="showKeyPad($event)">&#3250;</button>
+        <button class="key k-la" data-html-code="&#3251;"  (click)="showKeyPad($event)">&#3251;</button>
+        <button class="key k-va" data-html-code="&#3253;"  (click)="showKeyPad($event)">&#3253;</button>
+        <button class="key k-sha" data-html-code="&#3254;"  (click)="showKeyPad($event)">&#3254;</button>
+        <!-- consonents 7 -->
+        <button class="key k-kha" data-html-code="&#3255;"  (click)="showKeyPad($event)">&#3255;</button>
+        <button class="key k-kha" data-html-code="&#3256;"  (click)="showKeyPad($event)">&#3256;</button>
+        <button class="key k-kha" data-html-code="&#3257;"  (click)="showKeyPad($event)">&#3257;</button>
+        <button class="key k-kha" data-html-code="&#3249;"  (click)="showKeyPad($event)">&#3249;</button>
+        <button class="key k-kha" data-html-code="&#3294;"  (click)="showKeyPad($event)">&#3294;</button>
+        <!-- consonents 8 -->
+        <button class="key k-kha" data-html-code="&#3202;"  (click)="showKeyPad($event)">&#3202;</button>
+        <button class="key k-kha" data-html-code="&#3203;"  (click)="showKeyPad($event)">&#3203;</button>
+        <button class="key k-kha" data-html-code="&#3277;"  (click)="showKeyPad($event)">&#3277;</button>
+        <button class="key k-kha" data-html-code="&#3262;"  (click)="showKeyPad($event)">&#3262;</button>
+        <button class="key k-kha" data-html-code="&#3263;"  (click)="showKeyPad($event)">&#3263;</button>
+        <!-- consonents 9 -->
+        <button class="key k-kha" data-html-code="&#3264;"  (click)="showKeyPad($event)">&#3264;</button>
+        <button class="key k-kha" data-html-code="&#3265;"  (click)="showKeyPad($event)">&#3265;</button>
+        <button class="key k-kha" data-html-code="&#3266;"  (click)="showKeyPad($event)">&#3266;</button>
+        <button class="key k-kha" data-html-code="&#3270;"  (click)="showKeyPad($event)">&#3270;</button>
+        <button class="key k-kha" data-html-code="&#3271;"  (click)="showKeyPad($event)">&#3271;</button>
+        <!-- consonents 10 -->
+        <button class="key k-kha" data-html-code="&#3272;"  (click)="showKeyPad($event)">&#3272;</button>
+        <button class="key k-kha" data-html-code="&#3274;"  (click)="showKeyPad($event)">&#3274;</button>
+        <button class="key k-kha" data-html-code="&#3275;"  (click)="showKeyPad($event)">&#3275;</button>
+        <button class="key k-kha" data-html-code="&#3276;"  (click)="showKeyPad($event)">&#3276;</button>
+        <button class="key k-kha" data-html-code="&#32;"  (click)="showKeyPad($event)">SPACE</button>            
+
+    </span>
+    <span class="characters" *ngIf="!isCharacters">
+        <button class="key k-kha" data-html-code="&#48;"  (click)="showKeyPad($event)">&#48;</button>
+        <button class="key k-kha" data-html-code="&#49;"  (click)="showKeyPad($event)">&#49;</button>
+        <button class="key k-kha" data-html-code="&#50;"  (click)="showKeyPad($event)">&#50;</button>
+        <button class="key k-kha" data-html-code="&#51;"  (click)="showKeyPad($event)">&#51;</button>
+        <button class="key k-kha" data-html-code="&#52;"  (click)="showKeyPad($event)">&#52;</button>
+        <button class="key k-kha" data-html-code="&#53;"  (click)="showKeyPad($event)">&#53;</button>
+        <button class="key k-kha" data-html-code="&#54;"  (click)="showKeyPad($event)">&#54;</button>
+        <button class="key k-kha" data-html-code="&#55;"  (click)="showKeyPad($event)">&#55;</button>
+        <button class="key k-kha" data-html-code="&#56;"  (click)="showKeyPad($event)">&#56;</button>
+        <button class="key k-kha" data-html-code="&#57;"  (click)="showKeyPad($event)">&#57;</button>
+        <button class="key k-kha" data-html-code="&#188;"  (click)="showKeyPad($event)">&#188;</button>
+        <button class="key k-kha" data-html-code="&#189;"  (click)="showKeyPad($event)">&#189;</button>
+        <button class="key k-kha" data-html-code="&#190;"  (click)="showKeyPad($event)">&#190;</button>
+        <button class="key k-kha" data-html-code="&#33;"  (click)="showKeyPad($event)">&#33;</button>
+        <button class="key k-kha" data-html-code="&#34;"  (click)="showKeyPad($event)">&#34;</button>
+        <button class="key k-kha" data-html-code="&#35;"  (click)="showKeyPad($event)">&#35;</button>
+        <button class="key k-kha" data-html-code="&#37;"  (click)="showKeyPad($event)">&#37;</button>
+        <button class="key k-kha" data-html-code="&#38;"  (click)="showKeyPad($event)">&#38;</button>
+        <button class="key k-kha" data-html-code="&#39;"  (click)="showKeyPad($event)">&#39;</button>
+        <button class="key k-kha" data-html-code="&#40;"  (click)="showKeyPad($event)">&#40;</button>
+        <button class="key k-kha" data-html-code="&#41;"  (click)="showKeyPad($event)">&#41;</button>
+        <button class="key k-kha" data-html-code="&#42;"  (click)="showKeyPad($event)">&#42;</button>
+        <button class="key k-kha" data-html-code="&#44;"  (click)="showKeyPad($event)">&#44;</button>
+        <button class="key k-kha" data-html-code="&#46;"  (click)="showKeyPad($event)">&#46;</button>
+        <button class="key k-kha" data-html-code="&#47;"  (click)="showKeyPad($event)">&#47;</button>
+        <button class="key k-kha" data-html-code="&#58;"  (click)="showKeyPad($event)">&#58;</button>
+        <button class="key k-kha" data-html-code="&#59;"  (click)="showKeyPad($event)">&#59;</button>
+        <button class="key k-kha" data-html-code="&#63;"  (click)="showKeyPad($event)">&#63;</button>
+        <button class="key k-kha" data-html-code="&#64;"  (click)="showKeyPad($event)">&#64;</button>
+        <button class="key k-kha" data-html-code="&#91;"  (click)="showKeyPad($event)">&#91;</button>
+        <button class="key k-kha" data-html-code="&#92;"  (click)="showKeyPad($event)">&#92;</button>
+        <button class="key k-kha" data-html-code="&#93;"  (click)="showKeyPad($event)">&#93;</button>
+        <button class="key k-kha" data-html-code="&#94;"  (click)="showKeyPad($event)">&#94;</button>            
+        <button class="key k-kha" data-html-code="&#853;"  (click)="showKeyPad($event)">&#853;</button>            
+        <button class="key k-kha" data-html-code="&#852;"  (click)="showKeyPad($event)">&#852;</button>            
+        <button class="key k-kha" data-html-code="&#43;"  (click)="showKeyPad($event)">&#43;</button>            
+        <button class="key k-kha" data-html-code="&#61;"  (click)="showKeyPad($event)">&#61;</button>            
+        <button class="key k-kha" data-html-code="&#247;"  (click)="showKeyPad($event)">&#247;</button>            
+        <button class="key k-kha" data-html-code="&#8800;"  (click)="showKeyPad($event)">&#8800;</button>            
+        <button class="key k-kha" data-html-code="&#8811;"  (click)="showKeyPad($event)">&#8811;</button>            
+        <button class="key k-kha" data-html-code="&#8810;"  (click)="showKeyPad($event)">&#8810;</button>
+        <button class="key k-kha" data-html-code="&#8722;"  (click)="showKeyPad($event)">&#8722;</button>            
+        <button class="key k-kha" data-html-code="&#8726;"  (click)="showKeyPad($event)">&#8726;</button>            
+        <button class="key k-kha" data-html-code="&#32;"  (click)="showKeyPad($event)">SPACE</button>            
+    </span>
+    <button class="key k-kha" (click)="toggleNumberTxt()" *ngIf="!isCharacters">&#3205;&#3206;&#3207;</button>
+    <button class="key k-kha" (click)="toggleNumberTxt()" *ngIf="isCharacters">&#49;&#50;&#51;</button>
+    <ion-button icon-only class="backspace" size="small" (click)="backSpace()">
+        <ion-icon name="backspace"></ion-icon>
+    </ion-button>    
+</div>

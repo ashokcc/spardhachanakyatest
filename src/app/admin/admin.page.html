@@ -1,0 +1,70 @@
+<div class="custom-tabs-container">
+    <div class="custom-tab-container">
+        <router-outlet></router-outlet>
+    </div>
+
+    <div class="custom-tabs">
+        <a [routerLink]="['exams']" [routerLinkActive]="['active']" class="custom-tab-link">
+            <ion-icon name="albums"></ion-icon>
+            <span class="txt">Exams</span>
+            <!-- <span class="txt">&#3242;&#3248;&#3264;&#3221;&#3277;&#3255;&#3270;&#3223;&#3251;&#3265;</span>  -->
+        </a>
+        <a [routerLink]="['createassessment']" [routerLinkActive]="['active']" class="custom-tab-link">
+            <ion-icon name="add-circle"></ion-icon>           
+            <!-- <span class="txt">Create Assessment</span> -->
+            <span class="txt">Create Assessment</span>
+        </a>
+        <a [routerLink]="['reports']" [routerLinkActive]="['active']" class="custom-tab-link">
+            <ion-icon name="analytics"></ion-icon>
+            <span class="txt">Reports</span>
+        </a> 
+        <a [routerLink]="['students']" [routerLinkActive]="['active']" class="custom-tab-link">
+            <ion-icon name="people"></ion-icon>
+            <span class="txt">Students</span>
+        </a>                               
+    </div>
+</div>
+<!-- <ion-tabs>
+    <ion-tab *ngFor="let tab of tabs" [label]="tab.title" [icon]="tab.icon" [href]="tab.path">
+        <ion-router-outlet stack></ion-router-outlet>
+    </ion-tab>
+</ion-tabs> -->
+<!-- 
+<ion-tabs>
+    <ion-tab label="Exams" icon="albums" href="/admin/exams">
+        <router-outlet></router-outlet>
+    </ion-tab>
+    <ion-tab label="Create" icon="add" href="/admin/createassessment">
+        <router-outlet></router-outlet>
+    </ion-tab>
+    <ion-tab label="Reports" icon="analytics" href="/admin/reports">
+        <router-outlet></router-outlet>
+
+    </ion-tab>
+    <ion-tab label="Stundets" icon="people" href="/admin/students">
+        <router-outlet></router-outlet>
+    </ion-tab>              
+</ion-tabs> -->
+<!-- <ion-router-outlet></ion-router-outlet> -->
+<!-- <ion-tabs>
+    <ion-tab selected label="Exams" icon="albums">
+        <ion-content fullscreen padding>
+            <assessments-page></assessments-page>
+        </ion-content>
+    </ion-tab>
+    <ion-tab label="Create Test" icon="add">
+        <ion-content fullscreen padding>
+            <create-assessment></create-assessment>
+        </ion-content>
+    </ion-tab>
+    <ion-tab label="Reports" icon="analytics" >
+        <ion-content fullscreen padding>
+                <reports-page></reports-page>
+              </ion-content>
+    </ion-tab>
+    <ion-tab label="Students" icon="people">
+        <ion-content fullscreen padding>
+               <students-page></students-page>
+              </ion-content>
+    </ion-tab>
+</ion-tabs> -->

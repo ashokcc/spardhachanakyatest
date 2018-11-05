@@ -1,0 +1,25 @@
+<div class="custom-tabs-container">
+    <div class="custom-tab-container">
+        <router-outlet></router-outlet>
+    </div>
+
+    <div class="custom-tabs">
+        <a [routerLink]="['exams']" [routerLinkActive]="['active']" class="custom-tab-link">
+            <ion-icon name="albums"></ion-icon>
+            <!-- <span class="txt">Exams</span> -->
+            <span class="txt">&#3242;&#3248;&#3264;&#3221;&#3277;&#3255;&#3270;&#3223;&#3251;&#3265;</span> 
+        </a>
+        <a [routerLink]="['reports']" [routerLinkActive]="['active']" class="custom-tab-link">
+            <ion-icon name="analytics"></ion-icon>
+            
+            <!-- <span class="txt">Reports</span> -->
+            <span class="txt">&#3243;&#3250;&#3263;&#3236;&#3262;&#3202;&#3254;&#3223;&#3251;&#3265;</span>
+        </a> 
+        <a [routerLink]="['settings']" [routerLinkActive]="['active']" class="custom-tab-link">
+            <ion-icon name="people"></ion-icon>
+            <!-- <span class="txt">&#3256;&#3270;&#3231;&#3277;&#3231;&#3263;&#3202;&#3223;&#3277;&#3223;&#3251;&#3265;</span> -->
+            <span class="txt">Settings</span>
+            
+        </a>                              
+    </div>
+</div>

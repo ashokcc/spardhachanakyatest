@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+        &#3222;&#3262;&#3236;&#3270; &#3253;&#3263;&#3253;&#3248;&#3223;&#3251;&#3265;
+    </ion-title>
+    <ion-buttons slot="end">
+        <ion-button icon-only (click)="editUser()">
+          <ion-icon name="create"></ion-icon>
+        </ion-button>    
+      </ion-buttons>    
+  </ion-toolbar>
+</ion-header>
+<ion-content padding class="ion-content-container">
+    <ion-list *ngIf="!isEdit">
+      <ion-item lines="inset">
+          <ion-label>Email</ion-label>
+          <ion-note slot="end" color="primary">{{email}}</ion-note>
+      </ion-item>
+      <ion-item lines="inset">
+          <ion-label>Password</ion-label>
+          <ion-note slot="end" color="primary">******</ion-note>
+      </ion-item>                
+    </ion-list>
+    <span *ngIf="isEdit">
+      <form [formGroup]="updateForm" novalidate>
+        <ion-item>
+            <ion-label no-margin position="floating">&#3257;&#3270;&#3256;&#3248;&#3265;</ion-label>
+            <ion-input type="text" formControlName="username"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label no-margin position="floating">&#3246;&#3270;&#3266;&#3244;&#3270;&#3286;&#3250;&#3277; &#3240;&#3202;&#3244;&#3248;</ion-label>
+            <ion-input type="text" formControlName="phone"></ion-input>
+        </ion-item>  
+        <ion-item>
+            <ion-label no-margin position="floating">&#3207;&#3246;&#3271;&#3250;&#3277;</ion-label>
+            <ion-input type="text" formControlName="email"></ion-input>
+        </ion-item>      
+        <ion-item>
+            <ion-label no-margin position="floating">&#3242;&#3262;&#3256;&#3277;&#3253;&#3248;&#3277;&#3233;&#3277;</ion-label>
+            <ion-input type="password" formControlName="password"></ion-input>
+        </ion-item>
+        <br/>
+        <ion-button  (click)="updateDetails()" color="primary"> &#3246;&#3262;&#3257;&#3263;&#3236;&#3263;&#3247;&#3240;&#3277;&#3240;&#3265; &#3256;&#3250;&#3277;&#3250;&#3263;&#3256;&#3263;/ Submit </ion-button>
+      </form>
+  </span>    
+</ion-content>

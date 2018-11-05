@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+        &#3243;&#3250;&#3263;&#3236;&#3262;&#3202;&#3254;&#3223;&#3251;&#3265;
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button icon-only logout>
+          <ion-icon name="person"></ion-icon>
+      </ion-button>
+    </ion-buttons>    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding class="ion-content-container">
+  <ion-searchbar 
+    placeholder="&#3207;&#3246;&#3271;&#3250;&#3277; &#3246;&#3266;&#3250;&#3221; &#3257;&#3265;&#3233;&#3265;&#3221;&#3263;"
+    [(ngModel)]="searchByEmail">
+  </ion-searchbar>
+  <div *ngIf="allTests">
+    <ion-list>
+      <ion-item *ngFor="let test of allTests | filterEmail : searchByEmail" lines="inset" (click)="viewReport(test)">
+        <ion-label>{{test.topic}} </ion-label> 
+        <ion-text color="primary" style="font-size: 11px">By: {{test.email}}</ion-text>
+      </ion-item>
+    </ion-list>  
+  </div> 
+  <ion-item>
+      <ion-text *ngIf="noTestsMsg">
+         <!-- no results avalable -->
+          &#3247;&#3262;&#3253;&#3265;&#3238;&#3271; &#3243;&#3250;&#3263;&#3236;&#3262;&#3202;&#3254;&#3223;&#3251;&#3265; &#3250;&#3245;&#3277;&#3247;&#3253;&#3263;&#3250;&#3277;&#3250;.      
+      </ion-text>
+  </ion-item>       
+</ion-content>

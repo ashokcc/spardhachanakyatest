@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+        &#3240;&#3270;&#3266;&#3285;&#3202;&#3238;&#3235;&#3263;
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding>
+  <form [formGroup]="registerForm" novalidate>
+    <ion-item>
+        <ion-label no-margin position="floating">&#3257;&#3270;&#3256;&#3248;&#3265;</ion-label>
+        <ion-input type="text" formControlName="username"></ion-input>
+    </ion-item>  
+    <ion-item>
+        <ion-label no-margin position="floating">&#3246;&#3270;&#3266;&#3244;&#3270;&#3286;&#3250;&#3277; &#3240;&#3202;&#3244;&#3248;</ion-label>
+        <ion-input type="number" formControlName="phone"></ion-input>
+    </ion-item>  
+    <ion-item>
+        <ion-label no-margin position="floating">&#3207;&#3246;&#3271;&#3250;&#3277;</ion-label>
+        <ion-input type="email" formControlName="email"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label no-margin position="floating">&#3242;&#3262;&#3256;&#3277;&#3253;&#3248;&#3277;&#3233;&#3277;</ion-label>
+        <ion-input type="password" formControlName="password"></ion-input>
+    </ion-item>
+  </form>
+  <br/>
+  <ion-button  (click)="register()" color="primary"> &#3246;&#3262;&#3257;&#3263;&#3236;&#3263;&#3247;&#3240;&#3277;&#3240;&#3265; &#3256;&#3250;&#3277;&#3250;&#3263;&#3256;&#3263;/ Submit </ion-button>
+  <br/>
+  <ion-text color="danger">{{msg}}</ion-text>
+  <p class="flow-text">
+      &#3208;&#3223;&#3262;&#3223;&#3250;&#3270;&#3285; &#3222;&#3262;&#3236;&#3270; &#3257;&#3270;&#3266;&#3202;&#3238;&#3263;&#3238;&#3277;&#3238;&#3263;&#3285;&#3248;&#63; 
+  <a (click)="navigateToLogin()" class="blue-text text-darken-2">&#3207;&#3250;&#3277;&#3250;&#3263; &#3221;&#3277;&#3250;&#3263;&#3221;&#3277; &#3246;&#3262;&#3233;&#3263;</a></p>
+</ion-content>

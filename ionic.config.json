@@ -1,0 +1,7 @@
+{
+  "name": "spardhachanakyatest",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

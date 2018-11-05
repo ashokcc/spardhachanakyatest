@@ -1,0 +1,119 @@
+// http://ionicframework.com/docs/theming/
+@import "~@ionic/angular/css/core.css";
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+.cca-height{
+    height: 30px;
+}
+.toolbar-icon-txt{
+    margin-left: 10px;
+}
+.input-color{
+    color: var(--ion-color-primary);
+    font-size: 25px;    
+}
+.primary{
+    background-color: var(--ion-color-primary);
+}
+.customToastBg {
+    .toast-message {
+        background: var(--ion-color-primary)
+    } 
+}
+.customToastBgError {
+    .toast-message {
+        background: var(--ion-color-danger)
+    } 
+}
+.keypad-container{
+    position: fixed;
+    text-align: center;
+    width: 100%;  
+    height: 100%;  
+    z-index: 9;
+    top:0;
+    left:0;
+    background-color: rgba(0,0,0,.6);
+    .keys-container{
+        position: fixed;
+        z-index: 10;
+        text-align: center;
+        width: 100%;
+        background: #efeff4;
+        left: 50%;
+        padding: 10px 0;
+        top: 50%;
+        transform: translate(-50%,-50%);    
+    }
+    .key{
+	padding: 4px 5px;
+    z-index: 2;
+    background: rgba(255,255,255,.87);
+    font-size: 20px;
+    color: var(--ion-color-primary, #3880ff);
+    margin: 2px;
+    }
+}
+.ion-content-container{
+    height: calc(100% - 56px);
+}
+.custom-tabs-container{
+    height: 100%;
+    .custom-tabs{
+        position: fixed;
+        bottom: 2px;
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+		border-top: .55px solid rgba(var(--ion-tabbar-border-color-rgb,0,0,0),.2);		
+    }    
+    .custom-tab-container{
+        height: calc(100% - 55px);
+    }
+    .custom-tab-link{
+        text-decoration: none;
+        text-align: center;
+        color: #a5acbb;
+        cursor: pointer;
+        display: inline-block;
+        font-size: 20px;
+        font-weight: 600;
+        letter-spacing: .04em;
+        padding: 5px;
+        position: relative;
+        text-transform: uppercase;
+        transition: all .1s ease;
+
+        .txt{
+            font-size: 9px;
+            display: block;
+        }
+
+        :after{
+            background-color: rgba(0,32,88,.1);
+            content: "";
+            display: block;
+            height: 1px;
+            left: 0;
+            position: absolute;
+            top: 100%;
+            width: 100%;            
+        }
+        &.active{
+            color: var(--ion-color-primary);
+            font-weight: 700;
+            :after {
+                background-color:var(--ion-color-primary);        
+            }
+        }        
+    }
+
+}

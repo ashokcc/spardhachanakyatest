@@ -1,0 +1,75 @@
+<ion-header>
+  <ion-toolbar color="primary">
+      <ion-title slot="start">        
+        <span *ngIf="!isExamStarted">
+            <!-- All Exams  -->
+          &#3214;&#3250;&#3277;&#3250;&#3262; &#3242;&#3248;&#3264;&#3221;&#3277;&#3255;&#3270;&#3223;&#3251;&#3265;
+        </span>
+        <span *ngIf="isExamStarted">
+            {{title}}
+        </span>
+      </ion-title>
+      <ion-buttons slot="end">
+        <ion-button>
+          <span *ngIf="isQtnSelected && !isTestCompleted">
+              &#3256;&#3246;&#3247;: {{this.minutes}}: {{this.seconds}}
+          </span>
+        </ion-button>
+        <ion-button icon-only logout>
+            <ion-icon name="person"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding class="ion-content-container">
+  <div *ngIf="!isQtnSelected">
+    <div class="cca-searchbar">
+      <ion-input 
+        readonly  
+        type="text"
+        placeholder="&#3254;&#3264;&#3248;&#3277;&#3255;&#3263;&#3221;&#3270; &#3246;&#3266;&#3250;&#3221; &#3257;&#3265;&#3233;&#3265;&#3221;&#3263;/Search by Title"
+        [(ngModel)]="searchTitle" 
+        (click)="onInput($event)" 
+        style="box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);padding-left:55px;">
+      </ion-input>
+    </div>
+    <br/>
+    <ion-list>
+      <ion-item *ngFor="let question of allAssessments | filterTitle: searchTitle" lines="inset">
+        <ion-label (click)="startExam(question)" style="cursor: pointer">{{question.topic}}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-text *ngIf="noTests">&#3247;&#3262;&#3253;&#3265;&#3238;&#3271; &#3242;&#3248;&#3264;&#3221;&#3277;&#3255;&#3270;&#3223;&#3251;&#3265; &#3250;&#3245;&#3277;&#3247;&#3253;&#3263;&#3250;&#3277;&#3250;.</ion-text>
+      </ion-item>
+    </ion-list>
+    <keypad-component *ngIf="showKeyBoard" 
+      class="keypad-container"  
+      [showKeyBoard] = "showKeyBoard"  
+      [currFocusEl] = "currFocusEl"  
+      (evtSource)="changeInput($event)">
+    </keypad-component>    
+  </div>
+  <div *ngIf="isQtnSelected && !isTestCompleted">
+    <form [formGroup]="assessmentForm" novalidate>
+        <ion-list>
+          <ion-list-header>
+            <ion-text color="dark">
+              <h4 style="font-weight: bold;">{{currQtn.question}}</h4>
+            </ion-text>
+          </ion-list-header>
+          <ion-radio-group formControlName="selectedOption">
+            <ion-item *ngFor="let opt of currQtn.options;let i=index;">
+              <ion-text slot="end" style="width: calc(100% - 35px);">{{opt.option}}</ion-text>
+              <ion-radio value="{{opt.option}}" ></ion-radio>
+            </ion-item>
+          </ion-radio-group>
+        </ion-list>
+    </form>
+    <ion-item>
+      <ion-button color="primary" slot="end" size="large" (click)="nextQtn()">&#3246;&#3265;&#3202;&#3238;&#3270;</ion-button>
+    </ion-item>
+  </div>
+  <div *ngIf="isTestCompleted">
+      <ion-button color="primary" (click)="navigateToReport()" class="blue-text text-darken-2">&#3243;&#3250;&#3263;&#3236;&#3262;&#3202;&#3254;&#3223;&#3251;&#3240;&#3277;&#3240;&#3265; &#3253;&#3264;&#3221;&#3277;&#3255;&#3263;&#3256;&#3263;</ion-button>
+  </div>
+</ion-content>
